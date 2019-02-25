@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<?
+include "dinamik_div_view.php";
+?>
+<style>
+. dugme_kupi1 {
+ position:relative;top:50px;left:5px;background-color:red;
+}
+</style>
+</head>
+<body onMouseMove="mouse(event)" onMouseDown="mouse_down(event,obj)" onMouseUp="mouse_up()>
+
+<div class="w3-container w3-orange" >
+
+<h1 class="w3-container w3-orange">Shoping galery</h1>
+</div>
+
+<div class="w3-row-padding w3-margin-top w3-margin-bottom">
+
+   <?
+   foreach ($data as $row){
+   ?>
+	<div class="w3-col s12 m4 l3  w3-margin-top " >
+		<div class="w3-card-2" >
+			
+  			
+				<img src="<?echo $row->link_slike_r;?>" style="width:100%">
+				<div class="w3-container">
+					<h4><?echo $row->naziv;?></h4>
+					<a href='http://mihgaj8.freehostia.com/codeigniter/index.php/jlc_ctrl/detaljan_prikaz_robe/<? echo $row->id;?>'><button style='cursor:pointer;padding:10px;margin-bottom:5px;background-color:lightgray;color:blue;font-size:15px;'>Vidi detalje</button></a><button style="cursor:pointer;padding:10px;margin-bottom:5px;background-color:green;color:white;font-size:15px;position:relative;left:5px;" id="<?echo $row->id;?>" onclick="createTest(this.id,'<?echo $row->link_slike_r;?>','<?echo $row->m_telefon;?>','<?echo $row->userid;?>');" >Kupi</button>
+				</div>
+			
+			
+		</div>
+	</div>
+   <?}?>
+
+
+</div>
+
+</body>
+</html>

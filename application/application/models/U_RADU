@@ -1,0 +1,56 @@
+// ------------------i ovo ide u model Jlc_model.php ---------------------------------------------------------------------
+
+	
+	function prikazi_robu_po_id($id)
+	{echo "ovde prikaz by id";
+	$query=$this->db->query("select * from jlc_roba where id='".$id."'";);
+	return $query->result();
+	}
+
+
+
+
+
+
+// ----------------------------ovo ide u model -----------------------------------------------------------
+
+	
+	function azuriraj_robu($naziv,$vlasnik,$kratak_opis,$dugi_opis,$cena,$status,$id)
+	{
+	$q="update jlc_roba SET naziv='$naziv', id_vlasnika='$vlasnik',kratak_opis='$kratak_opis', dugi_opis='$dugi_opis', cena='$cena', status='$status' where id='".$id."'";
+	echo $q;
+	$query=$this->db->query($q);
+	}	
+
+
+
+
+
+
+// ----------------ovo ide u ctrl -----------------------------------------------------------	
+
+	public function azuriranje_robe($id)
+	{
+
+	
+	echo $id;
+	
+	
+	$result['data']=$this->Jlc_Model->prikazi_robu_po_id($id);
+	$this->load->view('jlc_azuriraj_robu_view',$result);	
+	echo "proso";
+		if($this->input->post('update'))
+		{
+		//get form's data and store in local varable
+		$naziv=$this->input->post('naziv');
+		$vlasnik=$this->input->post('vlasnik');
+		$kratak_opis=$this->input->post('kratak_opis');
+		$dugi_opis=$this->input->post('dugi_opis');
+		$cena=$this->input->post('cena');
+		$status=$this->input->post('status');				
+
+		$this->Jlc_Model->azuriraj_robu($naziv,$vlasnik,$kratak_opis,$dugi_opis,$cena,$status,$id);
+			
+		redirect("http://mihgaj8.freehostia.com/codeigniter/index.php/jlc_ctrl/prikazi_robu");
+		}
+	}

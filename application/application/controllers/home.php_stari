@@ -1,0 +1,10 @@
+<?php 
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Home extends Controller {
+    public function index()
+    {
+    	echo "ovo je ok bez baze e sad dodje baza";
+        $this->load->view('home_view');
+    }
+}
