@@ -2,7 +2,7 @@
 div [position:relative;float:left;}
 </style>
 <?php
-
+// ooooooooooovooooo je dooooooooooooooodato u nnooooooooovoj grani
 
 class Jlc_ctrl extends Controller 
 {
