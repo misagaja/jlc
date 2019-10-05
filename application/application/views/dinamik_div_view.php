@@ -2,7 +2,7 @@
 <style>
  
         .dynamicDiv { 
- //           float: left;
+            float: left;
             width: 320px;
             height: 470px;
             border: solid 1px #c0c0c0;
