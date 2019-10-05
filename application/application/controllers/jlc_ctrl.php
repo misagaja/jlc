@@ -26,7 +26,7 @@ class Jlc_ctrl extends Controller
 	//$newdata = array('projekat'  => "mammy",);
 
 		//$this->session->set_userdata($newdata);
-
+//ovo je dodato danas 
 	}
 	
 	public function index()
